@@ -1,7 +1,7 @@
 {
   "jwtPrivateKey": "myPrivateKey",
-  "db": "mongodb://usman:usman@cluster0-shard-00-00.vidd3.mongodb.net:27017,cluster0-shard-00-01.vidd3.mongodb.net:27017,cluster0-shard-00-02.vidd3.mongodb.net:27017/usman-express-crud?ssl=true&replicaSet=atlas-102el8-shard-0&authSource=admin&retryWrites=true&w=majority",
-  "db1": "mongodb://localhost/express-crud",
+  
+  "db": "mongodb://localhost/express-crud",
   "port": "3000",
   "sessionSecret": "MySessionSecret"
 }
