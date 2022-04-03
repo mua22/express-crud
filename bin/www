@@ -3,15 +3,23 @@
 /**
  * Module dependencies.
  */
-
+//require express app
 var app = require('../app');
+//A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers.
 var debug = require('debug')('express-crud:server');
+//require code http module
 var http = require('http');
+/**
+ * Node-config organizes hierarchical configurations for your app deployments.
+It lets you define a set of default parameters, and extend them for different deployment environments (development, qa, staging, production, etc.).
+Configurations are stored in configuration files within your application, and can be overridden and extended by environment variables, command line parameters, or external sources.
+ */
 var config = require("config");
 /**
  * Get port from environment and store in Express.
  */
-
+//get the port from environment variable. If not defined then set it to 3000 
+// server will start at localhost:3000 locally
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -25,6 +33,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
+//bind server event handlers for listening and error
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -89,6 +98,10 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
+//connect mongodb using mongoose
+/**
+ * Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+ */
 const mongoose = require("mongoose");
 const connectionString = config.get("db");
 mongoose
