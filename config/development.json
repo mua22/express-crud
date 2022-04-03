@@ -1,0 +1,6 @@
+{
+  "jwtPrivateKey": "myPrivateKey",
+  "db": "mongodb://localhost/express-crud",
+  "port": "3000",
+  "sessionSecret": "MySessionSecret"
+}
